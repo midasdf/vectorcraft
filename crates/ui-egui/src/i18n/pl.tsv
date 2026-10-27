@@ -1273,6 +1273,7 @@ lighting	Light	Światło
 	Hide Thumbnail	Ukryj miniaturę
 	Mixed Appearances	Różne wyglądy
 	Mixed Objects	Różne obiekty
+	Mixed	Mieszane
 	No options	Brak opcji
 	No Selection	Brak zaznaczenia
 	Offset X	Odsunięcie X
@@ -5076,6 +5077,7 @@ mark-style	Japanese	Japońskie
 @msg	unknown parameter `{key}`; the command takes: {keys}	nieznany parametr `{key}`; polecenie przyjmuje: {keys}
 	Load EPS into Clipboard	Wczytaj EPS do schowka
 @msg	an image of {w} × {h} pixels is too large to draw	obraz o wymiarach {w} × {h} pikseli jest zbyt duży, aby go narysować
+@msg	an image of {w} × {h} pixels is shown at reduced size	obraz o wymiarach {w} × {h} pikseli jest wyświetlany w zmniejszonym rozmiarze
 	Basic	Podstawowy
 	Fill and Stroke Controls	Elementy sterujące wypełnieniem i obrysem
 	Coloring Controls	Elementy sterujące kolorem
