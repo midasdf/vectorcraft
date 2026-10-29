@@ -147,6 +147,9 @@ pub fn show(app: &mut VectorcraftApp, ui: &mut Ui) {
     actions.push((tl!("Simplify"), "object.path.simplify"));
     actions.push((tl!("Arrange: Bring to Front"), "object.arrange.bringToFront"));
     actions.push((tl!("Lock"), "object.lock"));
+    // Lock and Isolate Group are left out while their commands are off (in isolation mode, while
+    // an opacity mask is edited).
+    actions.retain(|(_, id)| !matches!(*id, "object.lock" | "object.isolate") || crate::menus::enabled(app, id));
     let w = (ui.available_width() - 6.0) / 2.0;
     for pair in actions.chunks(2) {
         ui.horizontal(|ui| {
@@ -525,7 +528,7 @@ fn artboard_size_controls_inner(
     let mut fit = None;
     ui.horizontal(|ui| {
         dim_label(ui, tl!("Preset:"));
-        preset = widgets::combo(ui, "ab-preset", &current, 140.0, false, |ui| {
+        preset = widgets::combo(ui, "ab-preset", &current, 140.0, |ui| {
             let mut chosen = None;
             if let Some(enabled) = fits {
                 for (selection, label) in [(false, tl!("Fit to Artwork Bounds")), (true, tl!("Fit to Selected Art"))] {
